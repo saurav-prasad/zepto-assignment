@@ -92,8 +92,8 @@ function Search({ list }) {
     }
 
     return (
-        <div className='lg:mx-16 mx-auto flex flex-row flex-wrap items-start justify-start lg:justify-center'>
-            <div className={`flex flex-row space-x-2 mr-3 flex-wrap border-b-2 transition-all ${toggleList ? 'border-pink-500' : 'border-gray-500'}`}>
+        <div className='lg:mx-16 lg:p-0 px-2 mx-auto flex flex-row flex-wrap items-start justify-start lg:justify-center'>
+            <div className={`flex flex-row space-x-2 flex-wrap border-b-2 transition-all ${toggleList ? 'border-pink-500' : 'border-gray-500'}`}>
                 {/* clip */}
                 {
                     clip && clip.map((e, index) => <Clip highlight={e.highlight} key={index} moveToList={moveToList} name={e.name} email={e.email} />)
