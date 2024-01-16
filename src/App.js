@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from './components/search/Search';
 
 function App() {
+
+  // list items
+  const list = [
+    {
+      name: 'Saurav',
+      email: 'saurav@gmail.com',
+    },
+    {
+      name: 'Nick',
+      email: 'nick@gmail.com',
+    },
+    {
+      name: 'Rahul',
+      email: 'rahul@gmail.com',
+    },
+    {
+      name: 'Piyush',
+      email: 'piyush@gmail.com',
+    },
+    {
+      name: 'Sahil',
+      email: 'sahil@gmail.com',
+    },
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mt-10">
+      <Search list={list} />
     </div>
   );
 }
