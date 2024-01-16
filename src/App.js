@@ -28,9 +28,10 @@ function App() {
   ]
 
   return (
-    <div className="mt-7">
-      <h1 className="mb-10 text-xl font-semibold tracking-tight text-gray-800 sm:text-3xl w-full text-center">
-        Zepto Assignment
+    <div className="mt-3">
+      <h1 className="flex flex-row gap-2 justify-center items-center mb-10 text-2xl font-bold tracking-tight text-rose-500 sm:text-3xl w-full text-center">
+        <img className='w-24 h-24 mt-2' src='https://cdn.zeptonow.com/web-static-assets-prod/artifacts/6.21.0/images/logo.svg' alt='logo' />
+        Assignment
       </h1>
       <Search list={list} />
     </div>
