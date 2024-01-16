@@ -28,7 +28,10 @@ function App() {
   ]
 
   return (
-    <div className="mt-10">
+    <div className="mt-7">
+      <h1 className="mb-10 text-xl font-semibold tracking-tight text-gray-800 sm:text-3xl w-full text-center">
+        Zepto Assignment
+      </h1>
       <Search list={list} />
     </div>
   );

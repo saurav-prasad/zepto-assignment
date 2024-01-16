@@ -8,7 +8,7 @@ function Clip({ name, email, moveToList, highlight }) {
     return (
         <>
             <div
-                className={`mt-2 mb-1 h-fit w-fit pr-2 flex items-center gap-1 bg-gray-100 rounded-full ${highlight && 'border border-red-600'}`}
+                className={`mt-2 mb-1 h-fit w-fit pr-2 flex items-center gap-1 bg-gray-100 rounded-full ${highlight && 'border-2 border-red-600'}`}
             >
                 <img className="w-8 h-8 rounded-full border" src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=${name}`} alt="" />
                 <div className="text-base dark:text-gray-900 flex justify-center items-center">

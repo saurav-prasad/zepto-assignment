@@ -58,8 +58,8 @@ function Search({ list }) {
                 setListData([...listData, { ...newData }])
 
                 setClip(clip.slice(0, clip.length - 1))
-
                 setHighlightedChip(null);
+                setToggleList(true)
             } else {
                 const clipCopy = [...clip]
                 const lastObject = clipCopy[highlightedChip];
@@ -93,7 +93,7 @@ function Search({ list }) {
 
     return (
         <div className='lg:mx-16 mx-auto flex flex-row flex-wrap items-start justify-start lg:justify-center'>
-            <div className={`flex flex-row space-x-2 mr-3 flex-wrap border-b-2 border-blue-gray-200 transition-all ${toggleList && 'border-pink-500'}`}>
+            <div className={`flex flex-row space-x-2 mr-3 flex-wrap border-b-2 transition-all ${toggleList ? 'border-pink-500' : 'border-gray-500'}`}>
                 {/* clip */}
                 {
                     clip && clip.map((e, index) => <Clip highlight={e.highlight} key={index} moveToList={moveToList} name={e.name} email={e.email} />)
@@ -106,13 +106,16 @@ function Search({ list }) {
                         onKeyDown={onBackspace}
                         onClick={() => { setToggleList(true) }}
                         onChange={onChange}
-                        placeholder="Type something"
-                        className="peer h-fit w-auto bg-transparent font-sans p-1 text-lg font-normal text-blue-gray-700 outline outline-0 transition-all"
+                        placeholder="Find here..."
+                        className="h-fit w-auto bg-transparent font-sans p-1 text-lg font-normal text-blue-gray-700 outline outline-0 transition-all"
                     />
                     {/* dropdown lists */}
                     {
                         (toggleList && listData.length > 0) &&
-                        <div className='absolute rounded-lg top-[47px] w-max left-0 border-2 px-1 py-2'>
+                        <div className='absolute rounded-lg top-[50px] w-max left-0 border-2 px-1 py-2 transition-all'>
+                            <button onClick={() => setToggleList(false)} className='float-right'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                            </button>
                             <div className='gap-3 max-h-96 overflow-auto w-full flex flex-col'>
                                 {
                                     filterList.length > 0 ?
